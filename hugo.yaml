@@ -7,12 +7,18 @@ menus:
     - name: Home
       pageRef: /
       weight: 10
+      params:
+        icon: home
     - name: Posts
       pageRef: /posts
       weight: 20
+      params:
+        icon: book
     - name: Tags
       pageRef: /tags
       weight: 30
+      params:
+        icon: tag
 
 module:
   hugoVersion:

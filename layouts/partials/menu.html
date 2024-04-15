@@ -22,11 +22,20 @@ Renders a menu for the given menu ID.
   {{- $page := .page }}
   {{- range .menuEntries }}
     {{- $attrs := dict "href" .URL }}
+    {{- $classes := slice "contrast" }}
     {{- if $page.IsMenuCurrent .Menu . }}
-      {{- $attrs = merge $attrs (dict "class" "active" "aria-current" "page") }}
-    {{- else if $page.HasMenuCurrent .Menu .}}
-      {{- $attrs = merge $attrs (dict "class" "ancestor" "aria-current" "true") }}
+      {{- $classes = $classes | append "active" }}
+      {{- $attrs = merge $attrs (dict "aria-current" "page") }}
+      {{- else if $page.HasMenuCurrent .Menu .}}
+      {{- $classes = $classes | append "ancestor" }}
+      {{- $attrs = merge $attrs (dict "aria-current" "true") }}
+      {{- end }}
+    {{- $icon := .Params.icon | default "" }}
+    {{- if $icon }}
+      {{- $classes = $classes | append "icon-link" }}
     {{- end }}
+    {{- $classes = delimit $classes " " }}
+    {{- $attrs = merge $attrs (dict "class" $classes) }}
     {{- $name := .Name }}
     {{- with .Identifier }}
       {{- with T . }}
@@ -40,7 +49,11 @@ Renders a menu for the given menu ID.
             {{- printf " %s=%q" $k $v | safeHTMLAttr }}
           {{- end }}
         {{- end -}}
-      >{{ $name }}</a>
+      >
+      {{- with $icon }}
+      <i data-feather="{{ . }}"></i>
+      {{- end }}
+      {{ $name }}</a>
       {{- with .Children }}
         <ul>
           {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
