@@ -1,0 +1,15 @@
+name: Pico Latte
+license: Apache-2.0
+licenselink: 'https://www.apache.org/licenses/LICENSE-2.0'
+description: A minimal theme made with Pico CSS
+# homepage: 'https://github.com/owner/repo'
+# demosite: 'https://owner.github.io/repo'
+tags:
+  - blog
+  - minimal
+  - multilingual
+features:
+  - Pico CSS
+author:
+  name: Luana Latte
+  homepage: 'https://github.com/luanalatte'
