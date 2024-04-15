@@ -22,6 +22,36 @@
     height: 1.2em;
 }
 
+:root {
+    --header-bg-image: url(../img/header-light.svg)
+}
+
+[data-theme="dark"] {
+    --header-bg-image: url(../img/header-dark.svg)
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --header-bg-image: url(../img/header-dark.svg)
+    }
+}
+
+body > header {
+    position: relative;
+}
+
+body > header::before {
+    content: "";
+    background-image: var(--header-bg-image);
+    background-size: max(100%, 960px) auto;
+    background-position: top center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
 #hero {
     text-align: center;
 }
