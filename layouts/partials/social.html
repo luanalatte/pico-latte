@@ -1,0 +1,24 @@
+<nav class="social">
+  <ul>
+    {{- range $.Site.Params.social }}
+      {{ if .icon }}
+        {{- $attrs := dict "href" (.url | default "#") }}
+        {{- with .name }}
+          {{- $attrs = merge $attrs (dict "aria-label" .)}}
+        {{- end }}
+        <li>
+          <a
+            {{- range $k, $v := $attrs }}
+              {{- with $v }}
+                {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+              {{- end }}
+            {{- end -}}
+            target="_blank" rel="me"
+          >
+            <i data-feather="{{ .icon }}" aria-hidden="true"></i>
+          </a>
+        </li>
+      {{- end }}
+    {{- end }}
+  </ul>
+</nav>

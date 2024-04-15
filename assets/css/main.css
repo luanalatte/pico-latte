@@ -1,6 +1,6 @@
 .feather {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.2em;
+    height: 1.2em;
     stroke: currentColor;
     stroke-width: 2;
     stroke-linecap: round;
@@ -59,4 +59,23 @@ body > header::before {
 #hero .avatar {
     max-width: 200px;
     border-radius: 50%;
+}
+
+nav.social {
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+nav.social ul {
+    gap: 1rem;
+}
+
+nav.social li {
+    padding: 0;
+}
+
+nav.social a {
+    margin: 0;
+    line-height: 1;
+    --pico-color: var(--pico-contrast);
 }
