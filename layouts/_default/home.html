@@ -1,14 +1,16 @@
 {{ define "main" }}
   <section id="hero">
-    {{ with site.Params.avatar }}
-    <img src="{{ . }}" alt="avatar" class="avatar">
-    {{ end }}
-    <hgroup>
-      <h1>{{ .Site.Title }}</h1>
-      {{ with site.Params.description }}
-        <p>{{ . }}</p>
+    <div>
+      {{ with site.Params.avatar }}
+      <img src="{{ . }}" alt="avatar" class="avatar">
       {{ end }}
-    </hgroup>
+      <hgroup>
+        <h1>{{ .Site.Title }}</h1>
+        {{ with site.Params.description }}
+          <p>{{ . }}</p>
+        {{ end }}
+      </hgroup>
+    </div>
     {{ partial "social.html" . }}
   </section>
   <hr>

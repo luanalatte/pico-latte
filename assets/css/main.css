@@ -56,6 +56,17 @@ body > header::before {
     text-align: center;
 }
 
+#hero > :first-child {
+    transition: transform var(--pico-transition);
+    display: inline-block;
+}
+
+@media (any-pointer: fine) {
+    #hero > :first-child:hover {
+        transform: scale(1.05);
+    }
+}
+
 #hero .avatar {
     max-width: 200px;
     border-radius: 50%;
