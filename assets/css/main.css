@@ -21,3 +21,12 @@
     width: 1.2em;
     height: 1.2em;
 }
+
+#hero {
+    text-align: center;
+}
+
+#hero .avatar {
+    max-width: 200px;
+    border-radius: 50%;
+}
