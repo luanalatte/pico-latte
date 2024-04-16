@@ -56,6 +56,17 @@ article :is(h1, h2, h3, h4, h5, h6) :is(a, a.secondary, a.contrast) {
     --pico-text-decoration: none;
 }
 
+body > footer {
+    position: relative;
+    font-size: 0.875em;
+    --pico-color: var(--pico-secondary);
+    border-top: 1px solid var(--pico-muted-border-color);
+}
+
+body > footer nav li {
+    padding-block: calc(var(--pico-spacing) / 2);
+}
+
 #hero {
     text-align: center;
 }

@@ -36,6 +36,8 @@ menus:
       params:
         icon: twitter
 
+params:
+  email: "email@example.org"
 
 module:
   hugoVersion:

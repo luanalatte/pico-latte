@@ -1,3 +1,10 @@
-<div class="container">
-    <p>Copyright {{ now.Year }}. All rights reserved.</p>
-</div>
+<nav>
+    {{- with site.Params.email }}
+    <ul>
+        <li><a href="mailto:{{ . }}" class="icon-link secondary"><i data-feather="mail" aria-hidden="true"></i>{{ . }}</a></li>
+    </ul>
+    {{- end }}
+    <ul>
+        <li>© {{ now.Year }}. All rights reserved.</li>
+    </ul>
+</nav>
