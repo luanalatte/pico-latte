@@ -1,7 +1,3 @@
-.decoration-none, a.decoration-none {
-    --pico-text-decoration: none;
-}
-
 .feather {
     width: 1.2em;
     height: 1.2em;
@@ -54,6 +50,10 @@ body > header::before {
     width: 100%;
     height: 100vh;
     z-index: -1;
+}
+
+article :is(h1, h2, h3, h4, h5, h6) :is(a, a.secondary, a.contrast) {
+    --pico-text-decoration: none;
 }
 
 #hero {

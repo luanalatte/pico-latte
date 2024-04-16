@@ -24,7 +24,7 @@
     <h2>Recent posts</h2>
     {{ range site.RegularPages }}
       <article>
-        <h3><a href="{{ .RelPermalink }}" class="secondary decoration-none">{{ .LinkTitle }}</a></h3>
+        <h3><a href="{{ .RelPermalink }}" class="secondary">{{ .LinkTitle }}</a></h3>
         {{ .Summary }}
       </article>
     {{ end }}
